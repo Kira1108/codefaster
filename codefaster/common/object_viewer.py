@@ -45,7 +45,7 @@ class ObjectViewer:
             return "attribute", None
         
 
-    def view(self, obj):
+    def __call__(self, obj):
         print("Class", type(obj))
         print("Callable: ", callable(obj))
         print("-"*100)
@@ -71,7 +71,8 @@ class ObjectViewer:
                 
                 
 def view(obj:Any, pattern = None, print_doc = False, constructor_doc = False, remove_private = True) -> None:
-    ObjectViewer(
+    viewer = ObjectViewer(
         pattern, print_doc, constructor_doc = constructor_doc, 
-        remove_private=remove_private).view(obj)
+        remove_private=remove_private)
+    viewer(obj)
     
