@@ -23,7 +23,9 @@ def what_list(obj, stop = 5, sep_length = 60):
 def what_container(obj):
     if hasattr(obj, "items"):
         print("Dictionary Like Object:")
+        print("="*60)
         what_dict(obj)
     elif hasattr(obj, "__iter__"):
         print("List Like Object:")
+        print("="*60)
         what_list(obj)
