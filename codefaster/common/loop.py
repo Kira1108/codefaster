@@ -29,3 +29,7 @@ def what_container(obj, stop = 5, sep_length = 60):
         print("List Like Object:")
         print("="*60)
         what_list(obj, stop, sep_length)
+        
+        
+def show(obj, stop = 5, sep_length = 60):
+    what_container(obj, stop, sep_length)
