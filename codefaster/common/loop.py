@@ -6,7 +6,7 @@ def what_dict(obj, stop = 5, sep_length = 60):
             print(f"Value({type(v)}): ")
             print(v)
             i+=1
-            if i == stop - 1:
+            if i == stop:
                 break
             print("="*sep_length)
             
@@ -16,16 +16,16 @@ def what_list(obj, stop = 5, sep_length = 60):
             print(f"Index: ", i)
             print(f"Value({type(v)}): ")
             print(v)
-            if i == stop - 1:
+            if i == stop:
                 break
             print("="*sep_length)
 
-def what_container(obj):
+def what_container(obj, stop = 5, sep_length = 60):
     if hasattr(obj, "items"):
         print("Dictionary Like Object:")
         print("="*60)
-        what_dict(obj)
+        what_dict(obj, stop, sep_length)
     elif hasattr(obj, "__iter__"):
         print("List Like Object:")
         print("="*60)
-        what_list(obj)
+        what_list(obj, stop, sep_length)
